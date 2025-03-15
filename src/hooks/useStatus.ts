@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
-import { redirect } from "next/navigation";
-import { useAtom } from "jotai";
-import { phaseStatusAtom } from "@/atoms/phaseStatusAtom";
+import { useEffect } from 'react';
+import { redirect } from 'next/navigation';
+import { useAtom } from 'jotai';
+import { phaseStatusAtom } from '@/atoms/phaseStatusAtom';
 
 const useStatus = (watchword: string) => {
   const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -16,10 +16,10 @@ const useStatus = (watchword: string) => {
     eventSource.onmessage = (event) => {
       console.log(`sseからの受け取り: ${event.data}`);
       setStatus(event.data);
-      if (event.data === "read") redirect(`/${event.data}`);
-      if (event.data === "delete") redirect(`/${event.data}`);
-      if (event.data === "fix") redirect(`/${event.data}`);
-      if (event.data === "answer") redirect(`/${event.data}`);
+      if (event.data === 'read') redirect(`/${event.data}`);
+      if (event.data === 'delete') redirect(`/${event.data}`);
+      if (event.data === 'fix') redirect(`/${event.data}`);
+      if (event.data === 'answer') redirect(`/${event.data}`);
     };
 
     // コンポーネントがアンマウントされたときに接続を閉じる

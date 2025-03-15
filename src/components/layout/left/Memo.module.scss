@@ -1,33 +1,29 @@
-@use "@/styles/variables/Colors.scss";
-@use "@/styles/variables/Typography.scss";
-@use "@/styles/variables/Shadows.scss";
-
 .memoBox {
-    border-radius: 30px;
-    background-color: var(--color-white);
-    height: 100%;
-    box-shadow: var(--shadow-normal);
+  border-radius: 30px;
+  background-color: var(--color-white);
+  height: 100%;
+  box-shadow: var(--shadow-normal);
 }
 
 .title {
-    color: #5a6977;
-    font-size: var(--font-size-20);
-    font-weight: bold;
-    margin-left: 24px;
-    padding-top: 8px;
-    padding-bottom: 6px;
+  color: #5a6977;
+  font-size: var(--font-size-20);
+  font-weight: bold;
+  margin-left: 24px;
+  padding-top: 8px;
+  padding-bottom: 6px;
 }
 
 .textarea {
-    background-color: var(--color-white);
-    display: block;
-    margin-top: 10px;
-    width: 86%;
-    height: 82%;
-    color: #5a6977;
-    margin: 0 auto;
-    resize: none;
-    border: none;
-    outline: none;
-    font-size: var(--font-size-20);
+  background-color: var(--color-white);
+  display: block;
+  margin-top: 10px;
+  width: 86%;
+  height: 82%;
+  color: #5a6977;
+  margin: 0 auto;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: var(--font-size-20);
 }

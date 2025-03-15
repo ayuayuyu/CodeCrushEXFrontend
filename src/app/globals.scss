@@ -1,0 +1,73 @@
+:root {
+  --font-size-64: 64px;
+  --font-size-48: 48px;
+  --font-size-36: 36px;
+  --font-size-20: 20px;
+  --font-size-14: 14px;
+
+  --color-blue: #41bcff;
+  --color-green: #2ada6e;
+  --color-yellow: #ffc80b;
+  --color-orange: #ff9f40;
+  --color-red: #e54671;
+
+  --color-blue-light: #e8f9ff;
+  --color-green-light: #e8fde7;
+  --color-yellow-light: #fff6d6;
+  --color-orange-light: #ffe7cf;
+  --color-red-light: #ffe2e2;
+
+  --color-white: #ffffff;
+  --color-light-gray: #fafafa;
+  --color-gray: #dbe2e7;
+  --color-light-blue: #c7d2db;
+  --color-medium-gray: #5a6977;
+  --color-dark-gray: #2a3034;
+
+  --shadow-normal: 0 0 20px #00000004;
+
+  --background: var(--color-light-gray);
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--color-light-gray);
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

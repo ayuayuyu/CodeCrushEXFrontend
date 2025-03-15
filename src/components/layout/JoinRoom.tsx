@@ -1,16 +1,16 @@
-import { Input } from "../elements/Input";
-import { TextButton } from "../elements/TextButton";
-import styles from "../../app/matching/page.module.scss";
-import joinRooms from "../layout/JoinRoom.module.scss";
-import { useState, useEffect } from "react";
-import { searchWatchword } from "@/api/matching/roomJoin";
-import useStatus from "@/hooks/useStatus";
-import { useSetAtom } from "jotai";
-import { playerAtom, watchWordAtom } from "@/atoms/matchingStore";
-import { joinRoom } from "@/api/matching/roomJoin";
+import { Input } from '../elements/Input';
+import { TextButton } from '../elements/TextButton';
+import styles from '../../app/matching/page.module.scss';
+import joinRooms from '../layout/JoinRoom.module.scss';
+import { useState } from 'react';
+import { searchWatchword } from '@/api/matching/roomJoin';
+import useStatus from '@/hooks/useStatus';
+import { useSetAtom } from 'jotai';
+import { playerAtom, watchWordAtom } from '@/atoms/matchingStore';
+import { joinRoom } from '@/api/matching/roomJoin';
 
 export const JoinRoom = () => {
-  const [watchwordToJoin, setWatchwordToJoin] = useState<string>("");
+  const [watchwordToJoin, setWatchwordToJoin] = useState<string>('');
   const setWatchword = useSetAtom(watchWordAtom);
   const setPlayer = useSetAtom(playerAtom);
   //   const [phaseStatus] = useStatus(watchwordToJoin)
@@ -49,7 +49,7 @@ export const JoinRoom = () => {
         </p>
         <Input
           placeholder="あいことばを入力"
-          iconUrl="/icon.png"
+          // iconUrl="/icon.png"
           onChange={handleChange}
         />
       </div>

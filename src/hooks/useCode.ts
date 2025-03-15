@@ -1,6 +1,6 @@
-import { myCodeAtom } from "@/atoms/codeStore";
-import { useAtom } from "jotai";
-import { useState, useEffect } from "react";
+import { myCodeAtom } from '@/atoms/codeStore';
+import { useAtom } from 'jotai';
+import { useEffect } from 'react';
 
 const useCode = (watchword: string, player: string) => {
   const [code, setCode] = useAtom(myCodeAtom);
@@ -14,19 +14,19 @@ const useCode = (watchword: string, player: string) => {
       console.log(`useCode_SSE: ${event.data}`);
 
       // 受信データの最初と最後の `"` を削除
-      let cleanedData = event.data.replace(/^"|"$/g, "");
+      let cleanedData = event.data.replace(/^"|"$/g, '');
 
       // `\\n`（エスケープされた改行）はそのまま維持
-      cleanedData = cleanedData.replace(/\\n/g, "\\n");
+      cleanedData = cleanedData.replace(/\\n/g, '\\n');
 
       // `\n` を **本当の改行** に変換（Monaco Editor が正しく認識）
-      cleanedData = cleanedData.replace(/\\n/g, "\n");
+      cleanedData = cleanedData.replace(/\\n/g, '\n');
 
       // `\\t`（エスケープされたタブ）をタブに変換
-      cleanedData = cleanedData.replace(/\\t/g, "    ");
+      cleanedData = cleanedData.replace(/\\t/g, '    ');
 
       // `\r`（Windows の改行コード）を削除
-      cleanedData = cleanedData.replace(/\r/g, "");
+      cleanedData = cleanedData.replace(/\r/g, '');
 
       // Monaco Editor に正しく表示させる
       setCode(cleanedData);
@@ -36,7 +36,7 @@ const useCode = (watchword: string, player: string) => {
     return () => {
       eventSource.close();
     };
-  }, [url]);
+  }, [url, setCode]);
 
   return { code: code };
 };

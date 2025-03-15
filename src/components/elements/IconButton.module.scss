@@ -1,31 +1,27 @@
-@use "@/styles/variables/Colors.scss";
-@use "@/styles/variables/Typography.scss";
-@use "@/styles/variables/Shadows.scss";
-
 .button {
-    padding: 8px 8px;
-    display: flex;
-    border-radius: 100px;
-    width: fit-content;
-    font-size: var(--font-size-20);
-    font-weight: bold;
-    box-shadow: var(--shadow-normal);
-    align-content: center;
-    justify-content: center;
-    border: none;
-    transition: 100ms;
-    &:active {
-        transform: scale(0.96);
-        box-shadow: none;
-    }
+  padding: 8px 8px;
+  display: flex;
+  border-radius: 100px;
+  width: fit-content;
+  font-size: var(--font-size-20);
+  font-weight: bold;
+  box-shadow: var(--shadow-normal);
+  align-content: center;
+  justify-content: center;
+  border: none;
+  transition: 100ms;
+  &:active {
+    transform: scale(0.96);
+    box-shadow: none;
+  }
 }
 
 .button-orange {
-    background-color: var(--color-orange);
+  background-color: var(--color-orange);
 }
 .button-gray {
-    background-color: var(--color-gray);
+  background-color: var(--color-gray);
 }
 .button-white {
-    background-color: var(--color-white);
+  background-color: var(--color-white);
 }

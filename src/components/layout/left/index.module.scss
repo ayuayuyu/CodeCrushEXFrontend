@@ -1,10 +1,6 @@
-@use "@/styles/variables/Colors.scss";
-@use "@/styles/variables/Typography.scss";
-@use "@/styles/variables/Shadows.scss";
-
 .left {
-    width: 22vw;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  width: 22vw;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
