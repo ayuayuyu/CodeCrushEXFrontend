@@ -15,6 +15,7 @@ export const RoomCreated = () => {
   useEffect(() => {
     const fetchSearchInfo = async () => {
       const atai = await joinRoom(watchWord, player);
+      console.log(atai);
     };
     fetchSearchInfo();
   }, [watchWord, player]);

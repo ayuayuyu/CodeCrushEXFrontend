@@ -26,7 +26,8 @@ export const JoinRoom = () => {
     const searchInfo = await searchWatchword(watchwordToJoin);
     if (searchInfo !== null) {
       setPlayer(searchInfo.player);
-      const connect = joinRoom(watchwordToJoin, searchInfo.player);
+      const _connect = joinRoom(watchwordToJoin, searchInfo.player);
+      console.log(_connect);
     }
   };
 
