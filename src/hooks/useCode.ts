@@ -11,8 +11,6 @@ const useCode = (watchword: string, player: string) => {
     const eventSource = new EventSource(url);
 
     eventSource.onmessage = (event) => {
-      console.log(`useCode_SSE: ${event.data}`);
-
       // 受信データの最初と最後の `"` を削除
       let cleanedData = event.data.replace(/^"|"$/g, '');
 

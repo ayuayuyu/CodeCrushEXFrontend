@@ -14,7 +14,6 @@ const useStatus = (watchword: string) => {
     const eventSource = new EventSource(url);
 
     eventSource.onmessage = (event) => {
-      console.log(`sseからの受け取り: ${event.data}`);
       setStatus(event.data);
       if (event.data === 'read') redirect(`/${event.data}`);
       if (event.data === 'delete') redirect(`/${event.data}`);

@@ -21,24 +21,17 @@ export const JoinRoom = () => {
 
   //参加ボタン押した時に発火する関数
   const handleClick = async () => {
-    console.log(`watchwordToJoin: ${watchwordToJoin}`);
     setWatchword(watchwordToJoin);
     //パスワードの確認してルームに参加
     const searchInfo = await searchWatchword(watchwordToJoin);
     if (searchInfo !== null) {
-      console.log(searchInfo.player);
       setPlayer(searchInfo.player);
       const connect = joinRoom(watchwordToJoin, searchInfo.player);
-      console.log(`connect: ${connect}`);
     }
   };
 
   useStatus(watchwordToJoin);
 
-  // useEffect(() => {
-  //   console.log(phaseStatus.status);
-  //   if (phaseStatus.status !== "status") redirect(`/${phaseStatus.status}`);
-  // }, [phaseStatus]);
   return (
     <div className={`${styles.contentBox} ${joinRooms.joinBox}`}>
       <div className={joinRooms.watchwordBox}>

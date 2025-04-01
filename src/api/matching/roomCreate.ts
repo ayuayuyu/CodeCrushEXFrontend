@@ -11,24 +11,21 @@ export const createRoom = async ({
     const url = `${apiKey}api/createWatchword`;
 
     const response = await fetch(url, {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     });
 
     if (!response.ok) {
-      throw new Error("ネットワーク応答が正常ではありません");
+      throw new Error('ネットワーク応答が正常ではありません');
     }
 
     const data = await response.json();
 
-    console.log("watchword:", data);
-    console.log(`player: ${data.id}`);
     setPlayer(data.id);
-    console.log(`watchword: ${data.watchword}`);
     setWatchword(data.watchword);
   } catch (error) {
-    console.error("Error:", error);
+    console.error('Error:', error);
   }
 };

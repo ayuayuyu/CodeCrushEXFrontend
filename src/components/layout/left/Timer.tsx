@@ -21,7 +21,7 @@ export const Timer = () => {
   const [color, setColor] = useState('green');
   const [min, setMin] = useState(0);
   const [sec, setSec] = useState(0);
-  const timeoutSec = useRef(30);
+  const timeoutSec = useRef(120);
   const statusId = useRef(2);
   useCode(watchWord, player);
 
@@ -31,30 +31,21 @@ export const Timer = () => {
   useStatus(watchWord);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    console.log(`!!!!!!!!!!!!!!!!!!!!   ${status || null}`);
-
     if (!time.isFinish) return;
-
     if (status == 'read') {
-      console.log('readですよ');
-      timeoutSec.current = 20;
+      timeoutSec.current = 120;
       statusId.current = 2;
     } else if (status == 'delete') {
-      console.log('deleteですよ');
-      timeoutSec.current = 20;
+      timeoutSec.current = 180;
       statusId.current = 3;
-      console.log(`player: ${player} \n code: ${code}`);
       sendCode(watchWord, player, code);
     } else if (status == 'fix') {
-      console.log('fixですよ');
       statusId.current = 4;
     } else if (status == 'answer') {
       statusId.current = 5;
     }
 
-    console.log(`status: ${status}`);
     SendStatus(watchWord, player, statusId.current);
-    console.log(`statusId: ${statusId.current}`);
   }, [time.isFinish]);
 
   useEffect(() => {

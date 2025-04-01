@@ -51,7 +51,6 @@ export const getOutput = async (
     });
 
     const initialResult = await response.json();
-    console.log('Initial Response:', initialResult);
 
     if (!initialResult.id) {
       return ['ジョブの作成に失敗しました。'];
@@ -64,7 +63,6 @@ export const getOutput = async (
     const pollJobDetails = async (): Promise<string[] | null> => {
       const detailsResponse = await fetch(detailsUrl);
       const jobDetails = await detailsResponse.json();
-      console.log('Job Details Response:', jobDetails);
 
       if (jobDetails.status === 'completed') {
         if (jobDetails.stdout || jobDetails.stderr) {

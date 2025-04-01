@@ -5,27 +5,22 @@ const sendCode = (watchword: string, player: string, code: string) => {
   const sendData = { player: player, code: code };
 
   fetch(url, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(sendData),
   })
     //接続できたかの確認
     .then((response) => {
       if (!response.ok) {
-        throw new Error("ネットワーク応答が正常ではありません");
+        throw new Error('ネットワーク応答が正常ではありません');
       }
       return response.json();
     })
-    //ここのdataにレスポンスの値が入っている
-    .then((data) => {
-      console.log("Success:", data);
-      console.log(`sendCode: ${data.sendCode}`);
-    })
     //エラーであった場合
     .catch((error) => {
-      console.error("Error:", error);
+      console.error('Error:', error);
     });
 };
 export default sendCode;
